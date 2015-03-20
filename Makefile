@@ -6,7 +6,7 @@
 #    By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/19 23:10:29 by lubaujar          #+#    #+#              #
-#    Updated: 2015/03/20 04:10:32 by lubaujar         ###   ########.fr        #
+#    Updated: 2015/03/20 05:07:01 by lubaujar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NASM = ~/.brew/bin/nasm -f macho64
 SRC = ft_bzero.s ft_strcat.s\
 		ft_isascii.s ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s\
 		ft_isupper.s ft_islower.s\
-		ft_toupper.s ft_tolower.s
+		ft_toupper.s ft_tolower.s\
+		ft_strlen.s
 OBJ = $(SRC:.s=.o)
 
 all: $(NAME)
