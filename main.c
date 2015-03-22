@@ -6,7 +6,7 @@
 /*   By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 17:20:54 by lubaujar          #+#    #+#             */
-/*   Updated: 2015/03/20 04:21:03 by lubaujar         ###   ########.fr       */
+/*   Updated: 2015/03/22 17:22:39 by lubaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,23 @@ int    ft_isalpha(int c);
 int    ft_isalnum(int c);
 int    ft_toupper(int c);
 int    ft_tolower(int c);
+int    ft_strlen(char *s);
+int    ft_puts(char *s);
 
 int		main(void)
 {
     char  s[42] = "baba au whum";
     char  s2[42] = " ...miss u";
 
+    printf("### TEST PUTS ###\n");
+    printf("\ns ret value: %d", ft_puts(s));
+    printf("\ns ret value: %d", ft_puts("(null)"));
+    printf("\ns ret value: %d\n", ft_puts(""));
     printf("### TEST STRCAT ###\n");
     printf("s1: |%s|\ns2: |%s|\nstrcat: |%s|\n", s, s2, ft_strcat(s, s2));
+    printf("\n### TEST STRLEN ###\n");
+    printf("s: |%s|\nlen: %d\n", "strlen", ft_strlen("strlen"));
+    printf("s: |%s|\nlen: %d\n", "", ft_strlen(""));
     printf("\n### TEST BZERO ###\n");
     printf("s avant bzero: %s\n", s);
     ft_bzero(s, 4);
