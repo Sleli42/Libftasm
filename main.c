@@ -6,7 +6,7 @@
 /*   By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 17:20:54 by lubaujar          #+#    #+#             */
-/*   Updated: 2015/03/22 17:22:39 by lubaujar         ###   ########.fr       */
+/*   Updated: 2015/03/22 23:09:45 by lubaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,54 @@ int    ft_toupper(int c);
 int    ft_tolower(int c);
 int    ft_strlen(char *s);
 int    ft_puts(char *s);
+void   *ft_memset(void *b, int c, size_t len);
+void   *ft_memcpy(void *dest, void *src, size_t n);
 
+void    test_memcpy(void)
+{
+    char    s[42] = "baba au whum";
+    char    s2[42] = "yolo yo lo loyo";
+    char    s3[42] = "memset";
+    char    s4[42] = "memcpy";
+    printf("### TEST MEMCPY ###\n");
+    printf("s : |%s|,  s2 : |%s|,   len : %d\n", s, s2, 4);
+    printf("[memcpy] s : %s\n", ft_memcpy(s, s2, 4));
+    printf("[memcpy] s : %s\n", memcpy(s, s2, 4));
+    printf("s : |%s|,  s2 : |%s|,   len : %d\n", s3, s4, 6);
+    printf("[memcpy] s : %s\n", ft_memcpy(s3, s4, 6));
+    printf("[memcpy] s : %s\n", memcpy(s3, s4, 6));
+    printf("\n\n");
+}
+void    test_memset(void)
+{
+    char    s[42] = "baba au whum";
+    char    s2[42] = "yolo yo lo loyo";
+    printf("### TEST MEMSET ###\n");
+    printf("s : %s,  c : '%c',   len : %d\n", s, '0', 3);
+    printf("[memset] s : %s\n", ft_memset(s, '0', 3));
+    printf("s : %s,  c : '%c',   len : %d\n", s2, 'N', 6);
+    printf("[memset] s : %s\n", ft_memset(s2, 'N', 6));
+    printf("\n\n");
+}
+
+void    test_puts(void)
+{
+    char    s[42] = "put me, yes put me";
+    printf("### TEST PUTS ###\n");
+    printf("\nret value: %d\n", ft_puts(s));
+    printf("\nret value: %d\n", ft_puts("(null)"));
+    printf("\nret value: %d\n", ft_puts("blablablablabla010101010111bla"));
+    printf("\n\n");
+}
 int		main(void)
 {
     char  s[42] = "baba au whum";
     char  s2[42] = " ...miss u";
 
-    printf("### TEST PUTS ###\n");
-    printf("\ns ret value: %d", ft_puts(s));
-    printf("\ns ret value: %d", ft_puts("(null)"));
-    printf("\ns ret value: %d\n", ft_puts(""));
+    test_memset();
+    test_memcpy();
+    test_puts();
+    /*
     printf("### TEST STRCAT ###\n");
     printf("s1: |%s|\ns2: |%s|\nstrcat: |%s|\n", s, s2, ft_strcat(s, s2));
     printf("\n### TEST STRLEN ###\n");
@@ -89,6 +127,6 @@ int		main(void)
     printf("char c : '%c' -> ret value : %c\n", 'd', ft_tolower('d'));
     printf("char c : '%c' -> ret value : %c\n", 'O', ft_tolower('O'));
     printf("char c : '%c' -> ret value : %c\n", 'D', ft_tolower('D'));
-    printf("char c : '%c' -> ret value : %c\n", 'o', ft_tolower('o'));
+    printf("char c : '%c' -> ret value : %c\n", 'o', ft_tolower('o'));*/
     return (0);
 }
