@@ -6,7 +6,7 @@
 /*   By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 17:20:54 by lubaujar          #+#    #+#             */
-/*   Updated: 2015/03/22 23:09:45 by lubaujar         ###   ########.fr       */
+/*   Updated: 2015/03/23 23:04:46 by lubaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,37 @@ int    ft_strlen(char *s);
 int    ft_puts(char *s);
 void   *ft_memset(void *b, int c, size_t len);
 void   *ft_memcpy(void *dest, void *src, size_t n);
+char    *ft_strcpy(char *s1, char *s2);
+char    *ft_strdup(char *s);
+
+void    test_strdup(void)
+{
+    char    s[42] = "baba au whum duplicate";
+
+    printf("### TEST STRDUP ###\n");
+    printf("s: |%s|\n", s);
+    printf("dup: |%s|\n", ft_strdup(s));
+    printf("\n\n");
+}
+
+void    test_strcpy(void)
+{
+    char    str1[42] = "tamer";
+    char    str2[42] = "baba au whum";
+    printf("### TEST STRCPY ###\n");
+    printf("|%s|\n", str1);
+    printf("|%s|\n", str2);
+    printf("|%s|\n", ft_strcpy(str1, str2));
+    printf("\n\n");
+}
 
 void    test_memcpy(void)
 {
     char    s[42] = "baba au whum";
     char    s2[42] = "yolo yo lo loyo";
-    char    s3[42] = "memset";
-    char    s4[42] = "memcpy";
     printf("### TEST MEMCPY ###\n");
-    printf("s : |%s|,  s2 : |%s|,   len : %d\n", s, s2, 4);
-    printf("[memcpy] s : %s\n", ft_memcpy(s, s2, 4));
+    printf("[ft_memcpy] s : %s\n", ft_memcpy(s, s2, 4));
     printf("[memcpy] s : %s\n", memcpy(s, s2, 4));
-    printf("s : |%s|,  s2 : |%s|,   len : %d\n", s3, s4, 6);
-    printf("[memcpy] s : %s\n", ft_memcpy(s3, s4, 6));
-    printf("[memcpy] s : %s\n", memcpy(s3, s4, 6));
     printf("\n\n");
 }
 void    test_memset(void)
@@ -70,6 +87,8 @@ int		main(void)
     char  s[42] = "baba au whum";
     char  s2[42] = " ...miss u";
 
+    test_strdup();
+    test_strcpy();
     test_memset();
     test_memcpy();
     test_puts();

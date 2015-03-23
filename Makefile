@@ -6,17 +6,17 @@
 #    By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/19 23:10:29 by lubaujar          #+#    #+#              #
-#    Updated: 2015/03/20 17:08:28 by lubaujar         ###   ########.fr        #
+#    Updated: 2015/03/23 22:19:09 by lubaujar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfts.a
 NASM = ~/.brew/bin/nasm -f macho64 
-SRC = ft_bzero.s ft_strcat.s\
+SRC = ft_bzero.s ft_strcat.s ft_puts.s\
 		ft_isascii.s ft_isdigit.s ft_isalpha.s ft_isalnum.s ft_isprint.s\
 		ft_isupper.s ft_islower.s\
 		ft_toupper.s ft_tolower.s\
-		ft_strlen.s ft_puts.s
+		ft_strlen.s ft_memset.s ft_memcpy.s ft_strcpy.s ft_strdup.s
 OBJ = $(SRC:.s=.o)
 
 all: $(NAME)
