@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lubaujar <lubaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 17:20:54 by lubaujar          #+#    #+#             */
-/*   Updated: 2015/03/24 02:50:03 by lubaujar         ###   ########.fr       */
+/*   Updated: 2015/03/24 19:04:37 by lubaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
 
 void  ft_bzero(void *s, size_t n);
 char  *ft_strcat(char *s1, char *s2);
@@ -30,6 +31,15 @@ void   *ft_memset(void *b, int c, size_t len);
 void   *ft_memcpy(void *dest, void *src, size_t n);
 char    *ft_strcpy(char *s1, char *s2);
 char    *ft_strdup(char *s);
+void    ft_cat(int fd);
+
+void    test_cat(void)
+{
+    int fd;
+    fd = open("test.txt", O_RDONLY);
+    printf("~~~~ ##### TEST [CAT] ##### ~~~~\n");
+    ft_cat(fd);
+}
 
 void    test_strdup(void)
 {
@@ -193,6 +203,7 @@ int		main(void)
     char  s[42] = "baba au whum";
     char  s2[42] = " ...miss u";
 
+    test_cat();
     test_strdup();
     test_strcpy();
     test_memset();
