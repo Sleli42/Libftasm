@@ -12,7 +12,7 @@ section .data
 section .text
 
 _ft_puts:
-    cmp rdi, 0                  ;check if str == NULL
+    cmp byte [rdi], byte 0                  ;check if str == NULL
     je  _null
     jmp _write_str
 
@@ -51,4 +51,4 @@ backslash_n:
 
 end:
     mov rax, 1
-    ret 
+    ret
