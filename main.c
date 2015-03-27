@@ -6,7 +6,7 @@
 /*   By: lubaujar <lubaujar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 17:20:54 by lubaujar          #+#    #+#             */
-/*   Updated: 2015/03/24 19:04:37 by lubaujar         ###   ########.fr       */
+/*   Updated: 2015/03/27 01:26:25 by lubaujar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,37 @@ void   *ft_memcpy(void *dest, void *src, size_t n);
 char    *ft_strcpy(char *s1, char *s2);
 char    *ft_strdup(char *s);
 void    ft_cat(int fd);
+//      BONUS
+char    *ft_strchr(char *s, int c);
+char    *ft_strrchr(char *s, int c);
+
+void    test_strrchr(void)
+{
+    char    s[42]= "baba au whum";
+    printf("~~~~ ##### TEST [STRRCHR] ##### ~~~~\n");
+    printf("s: |%s|\tc: |%c|\n", s, 'a');
+    printf("~>[_ft_strrchr]: |%s|\n", ft_strrchr(s, 'a'));
+    printf("s: |%s|\tc: |%c|\n", "asm 64 bits bidibou", 'b');
+    printf("~>[_ft_strrchr]: |%s|\n", ft_strrchr("asm 64 bits bidibou", 'b'));
+}
+
+void    test_strchr(void)
+{
+    char    s[42]= "baba au whum";
+    printf("~~~~ ##### TEST [STRCHR] ##### ~~~~\n");
+    printf("s: |%s|\tc: |%c|\n", s, 'w');
+    printf("~>[_ft_strchr]: |%s|\n", ft_strchr(s, 'w'));
+    printf("s: |%s|\tc: |%c|\n", "asm 64 bits", 'w');
+    printf("~>[_ft_strchr]: |%s|\n", ft_strchr("asm 64 bits", 'w'));
+}
 
 void    test_cat(void)
 {
     int fd;
-    fd = open("test.txt", O_RDONLY);
+    fd = open("ft_puts.s", O_RDONLY);
     printf("~~~~ ##### TEST [CAT] ##### ~~~~\n");
     ft_cat(fd);
+    // ft_cat(42);
 }
 
 void    test_strdup(void)
@@ -48,7 +72,7 @@ void    test_strdup(void)
     printf("~~~~ ##### TEST [STRDUP] ##### ~~~~\n");
     printf("s: |%s|\n", s);
     printf("~>[_ft_strdup]: |%s|\n", ft_strdup(s));
-    printf("----->[strdup]: |%s|\n", ft_strdup(s));
+    printf("----->[strdup]: |%s|\n", strdup(s));
 }
 
 void    test_strcpy(void)
@@ -79,7 +103,7 @@ void    test_memset(void)
     printf("~~~~ ##### TEST [MEMSET] ##### ~~~~\n");
     printf("s: |%s|,  c: '%c',   len: %d\n", s, '0', 3);
     printf("~>[_ft_memset]: |%s|\n", ft_memset(s, '0', 3));
-    printf("---->-[memset]: |%s|\n", memset(s, '0', 3));
+    printf("----->[memset]: |%s|\n", memset(s, '0', 3));
     printf("s: |%s|,  c: '%c',   len : %d\n", s2, 'N', 6);
     printf("~>[_ft_memset]: |%s|\n", ft_memset(s2, 'N', 6));
     printf("----->[memset]: |%s|\n", memset(s2, 'N', 6));
@@ -200,23 +224,22 @@ void    test_toUPLOWer(void)
 
 int		main(void)
 {
-    char  s[42] = "baba au whum";
-    char  s2[42] = " ...miss u";
-
-    test_cat();
-    test_strdup();
-    test_strcpy();
-    test_memset();
-    test_memcpy();
-    test_puts();
-    test_strcat();
-    test_bzero();
-    test_isascii();
-    test_isdigit();
-    test_isprint();
-    test_isUPLOWer();
-    test_isalpha();
-    test_isalnum();
-    test_toUPLOWer();
+    test_strrchr();
+    test_strchr();
+    // test_cat();
+    // test_strdup();
+    // test_strcpy();
+    // test_memset();
+    // test_memcpy();
+    // test_puts();
+    // test_strcat();
+    // test_bzero();
+    // test_isascii();
+    // test_isdigit();
+    // test_isprint();
+    // test_isUPLOWer();
+    // test_isalpha();
+    // test_isalnum();
+    // test_toUPLOWer();
     return (0);
 }

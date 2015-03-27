@@ -6,7 +6,7 @@
 #    By: lubaujar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/19 23:10:29 by lubaujar          #+#    #+#              #
-#    Updated: 2015/03/24 18:54:25 by lubaujar         ###   ########.fr        #
+#    Updated: 2015/03/27 01:38:29 by lubaujar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC = ft_bzero.s ft_strcat.s ft_puts.s\
 		ft_isupper.s ft_islower.s\
 		ft_toupper.s ft_tolower.s\
 		ft_strlen.s ft_memset.s ft_memcpy.s ft_strcpy.s ft_strdup.s\
-		ft_cat.s
+		ft_cat.s\
+		ft_strchr.s ft_strrchr.s
 
 OBJ = $(SRC:.s=.o)
 
